@@ -1,0 +1,10 @@
+https://binarysearch.com/problems/Distance-Pair
+           int n = nums.size();
+           int result = INT_MIN;
+           int max_so_far = nums[0]+0;
+           for(int i=1;i<n;i++)                                          /*restructuring the problem & then solve*/
+           {
+              result = max(result , max_so_far + (nums[i]-i));
+              max_so_far = max( max_so_far, nums[i] + i );
+           }
+           return result; 
